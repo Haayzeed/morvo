@@ -189,6 +189,12 @@
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         grid-gap: 30px;
+        @media (max-width: 1024px) {
+            width: 100%;
+            height: auto;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+        }
         @media (max-width: 767px) {
             width: 100%;
             height: auto;
@@ -275,15 +281,14 @@
 
     &__slide {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 30px;
+        grid-template-columns: repeat(1, 1fr);
         @media (max-width: 767px) {
             grid-template-columns: 100%;
         }
     }
     
     &__slide__content {
-        height: 200px;
+        // height: 200px;
         background: #252533;
         padding: 40px;
         border-radius: 20px;

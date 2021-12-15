@@ -98,26 +98,30 @@
     <section class="container chart">
         <div class="chart__content">
             <h1 class="chart__title">More chart <span>explore more</span></h1>
-            <div class="chart__slide">
-                <div class="chart__slide__content">
-                    <div class="chart__slide__holder">
-                        <h4 class="chart__slide__title">Top 200 <br> Indonesia </h4>
-                        <div class="chart__slide__image">
-                            <img src="images/playlist-1.png" alt="" class="playlist-1">
-                            <img src="images/playlist-2.png" alt="">
+            <div class="chart__slide glide">
+                <div class="glide__track" data-glide-el="track">
+                    <div class="glide__slides">
+                        <div class="chart__slide__content glide__slide">
+                            <div class="chart__slide__holder">
+                                <h4 class="chart__slide__title">Top 200 <br> Indonesia </h4>
+                                <div class="chart__slide__image">
+                                    <img src="images/playlist-1.png" alt="" class="playlist-1">
+                                    <img src="images/playlist-2.png" alt="">
+                                </div>
+                            </div>
+                            <p class="chart__slide__subtitle">The most morvoluse tracks in Indonesia this week</p>
+                        </div>
+                        <div class="chart__slide__content glide__slide">
+                            <div class="chart__slide__holder">
+                                <h4 class="chart__slide__title">Top 250 <br> Yagyakarta </h4>
+                                <div class="chart__slide__image">
+                                    <img src="images/playlist-1.png" alt="" class="playlist-1">
+                                    <img src="images/playlist-2.png" alt="">
+                                </div>
+                            </div>
+                            <p class="chart__slide__subtitle">The most morvoluse tracks in Yagyakarta this week</p>
                         </div>
                     </div>
-                    <p class="chart__slide__subtitle">The most morvoluse tracks in Indonesia this week</p>
-                </div>
-                <div class="chart__slide__content">
-                    <div class="chart__slide__holder">
-                        <h4 class="chart__slide__title">Top 250 <br> Yagyakarta </h4>
-                        <div class="chart__slide__image">
-                            <img src="images/playlist-1.png" alt="" class="playlist-1">
-                            <img src="images/playlist-2.png" alt="">
-                        </div>
-                    </div>
-                    <p class="chart__slide__subtitle">The most morvoluse tracks in Yagyakarta this week</p>
                 </div>
             </div>
         </div>
@@ -226,6 +230,8 @@
     <section class="container copyright">
         <p class="copyright__text"><span>Morvo 2021</span> <span>All rights reserved</span></p>
     </section>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.5.0/css/glide.core.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.5.0/glide.min.js"></script>
     <script>
         const openMenu = document.querySelector('.menu__icon');
         const closeMenu = document.querySelector('.close__icon');
@@ -240,6 +246,21 @@
             document.querySelector('.nav').style.display = 'none';
             closeMenu.style.display = 'none';
         });
+
+        var slider = new Glide('.glide', {
+        type: 'carousel',
+        startAt: 0,
+        autoplay: 3500,
+        perView: 2,
+        gap: 20,
+        breakpoints: {
+            1200: { perView: 1 },
+            600: { perView: 1 },
+            
+            }
+        });
+
+        slider.mount()
     </script>
 </body>
 </html>
